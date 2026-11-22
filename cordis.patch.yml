@@ -1,0 +1,5 @@
+# 文档中心 bundle 的 Host 半身。浏览器半身由 package.json 的 dsh.client 声明，
+# 绑定在 name 为裸包名的这一行上。
+- insert:
+    - id: document-center
+      name: 'dsh-document-center'

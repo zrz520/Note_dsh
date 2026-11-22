@@ -1,0 +1,58 @@
+{
+  "name": "dsh-document-center",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "文档中心：在 DSH 中管理一个本地 Markdown 文档库",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib/library.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "src",
+    "scripts",
+    "test",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "scripts": {
+    "test": "node --test test/library.test.js",
+    "build:client": "node scripts/build-client.mjs",
+    "prepack": "npm run build:client"
+  },
+  "devDependencies": {
+    "@milkdown/crepe": "7.23.0",
+    "@milkdown/kit": "7.23.0",
+    "esbuild": "0.25.12"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "document-center",
+    "markdown",
+    "milkdown"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
